@@ -1,0 +1,17 @@
+header
+{
+    margin: 5px;
+    height: 5%;
+    background-color:rgb(58, 56, 67);
+}
+
+main
+{
+    padding: 20px;
+}
+
+section
+{
+    width: 50%;
+    float:left;
+}
