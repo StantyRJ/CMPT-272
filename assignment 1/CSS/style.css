@@ -1,17 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body
+{
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #EDEFF1;
+}
+
 header
 {
     margin: 5px;
-    height: 5%;
-    background-color:rgb(58, 56, 67);
+    height: 96px;
+    list-style-type: none;
+    padding-top: 18px;
+    padding-left: 24px;
+    color: white;
+    background-color:#37474F;
+}
+
+header span
+{
+    color: #F26241;
 }
 
 main
 {
-    padding: 20px;
+    display: flex;
+    resize: both;
 }
 
 section
 {
-    width: 50%;
-    float:left;
+    flex:1;
+    margin: 10px;
+}
+
+li
+{
+    list-style: none;
+}
+
+li::before
+{
+    content: "\2022";
+    color: black;
+
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+li
+{
+    color: #8C1B24;
+}
+
+.Business-hide
+{
+    display: none;
+}
+
+.Business:hover + .Business-hide
+{
+    display: block;
+}
+
+.Computer-Science-hide
+{
+    display: none;
+}
+
+.Computer-Science:hover + .Computer-Science-hide
+{
+    display: block;
 }
