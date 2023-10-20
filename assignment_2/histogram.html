@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="calculate.js"></script>
+    <link rel="stylesheet" href="histogram.css">
+    <title>Histogram</title>
+</head>
+<body onload="refreshSite()">
+    <section class="content">
+        <section class="header">
+            <H1>Histogram Generator</H1>
+            <form>
+                <input type="file" id="myFile" name="filename">
+            </form>
+        </section>
+
+        <section class="box">
+            <h2>Lower bounds</h2>
+            <form id="bounds">
+                <table class="lowerBoundsTable">
+                </table>
+            </form>
+        </section>
+
+        <section class="box">
+            <h2>Histogram</h2>
+            <table class="histogramTable">
+            </table>
+        </section>
+
+        <section class="box">
+            <h2>Stats</h2>
+            <table class="stats">
+            </table>
+        </section>
+
+    </section>
+</body>
+</html>

@@ -15,21 +15,24 @@ header
     height: 96px;
     width: 100%;
     background-color:#37474F;
+    display: flex;
+    flex-direction: row;
 }
 
 header h1
 {
-    display: inline-block;
     color: white;
     padding-top: 8px;
-    
+    padding-left: 24px;
 }
 
 header img
 {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 83%;
+    width:fit-content;
+    height: fit-content;
+    padding-top: 40px;
+    margin-left: auto;
+    padding-right:8px;
 }
 
 header span
@@ -40,21 +43,32 @@ header span
 main
 {
     margin: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 section
 {
-    display: inline-block;
     height: 50%;
-    width: 48%;
+    width: 50%;
+    flex-grow: 1;
+}
+
+@media(max-width: 550px)
+{
+    main
+    {
+        flex-direction: column;
+    }
 }
 
 li
 {
     list-style: none;
+    padding-top: 8px;
 }
 
-li::before
+#Business::before, #Computer-Science::before
 {
     content: "\2022";
     color: black;
@@ -64,9 +78,10 @@ li::before
     margin-left: -1em;
 }
 
-li
+a
 {
     color: #8C1B24;
+    text-decoration: none;
 }
 
 .Business-hide
@@ -74,7 +89,7 @@ li
     display: none;
 }
 
-.Business:hover + .Business-hide
+#Business:hover ~ .Business-hide
 {
     display: block;
 }
@@ -84,7 +99,7 @@ li
     display: none;
 }
 
-.Computer-Science:hover + .Computer-Science-hide
+#Computer-Science:hover ~ .Computer-Science-hide
 {
     display: block;
 }

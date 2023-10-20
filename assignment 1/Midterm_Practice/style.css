@@ -1,0 +1,23 @@
+body
+{
+    background-color: lightslategrey;
+    display: flex;
+}
+
+.card
+{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px ;
+    text-align: center;
+    object-position: center;
+    max-width: 100%;
+    max-height: auto;
+    margin: auto;
+}
+
+img
+{
+    width: 100%;
+}
+

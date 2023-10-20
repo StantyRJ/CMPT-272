@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body
+{
+    background-color: #A6192E;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+
+section
+{
+    width: 33%;
+    height: max-content;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-bottom: 16px;
+    background-color: #a8b4b9;
+    border-radius: 5px;
+}
+
+.box:hover
+{
+    background-color: #7d868a;
+}
+
+section input
+{
+    width: 40%;
+    height: 24px;
+    margin-left: 96px;
+    border-width: 0px;
+    border-radius: 3px;
+    background-color: #e7edf0;
+    transition: border 1s;
+}
+
+input:focus
+{
+    border-color: #555;
+    transition: border 1s;
+}
+
+#myFile
+{
+    background-color: transparent;
+}
+
+.header
+{
+    width: 100%;
+    margin: auto;
+    height: min-content;
+    background-color: transparent;
+}
+
+.content
+{
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+td
+{
+    padding-left: 64px;
+}
+
