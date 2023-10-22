@@ -33,6 +33,7 @@ function refreshSite()
     $(".stats").empty()
     $(".histogramTable").empty()
     $(".lowerBoundsTable").empty()
+    $("#error").empty()
 
     //add all values
     for(var i = 0; i < allGrades.length; i++)
@@ -52,9 +53,19 @@ function refreshSite()
     let form = document.getElementById('bounds');
     form.addEventListener('input', function (event) {
         let inp = event.target;
+        $("#error").empty()
+        for(i in allGrades)
+        {
+            console.log(allGrades[i].percentage +" "+ parseFloat(inp.value))
+            if(allGrades[i].percentage == parseFloat(inp.value))
+            {
+                inp.value = allGrades[parseInt(inp.id)].percentage
+                $("#error").text("Invalid grade input grades will be crossing over!")
+            }
+        }
+
         inp.value = parseFloat(inp.value).toFixed(2)
         allGrades[parseInt(inp.id)].percentage = parseFloat(inp.value)
-        console.log($("#myFile").get(0).files.length)
         if($("#myFile").get(0).files.length > 0)
             loadFile($("#myFile").get(0).files)
     });
@@ -68,6 +79,8 @@ function updatePercentage(change)
 function loadFile(event)
 {
     const reader = new FileReader();
+    lowestGrade.actualGrade = 100
+    highestGrade.actualGrade = 0
     reader.onload = function () 
     {
         const lines = reader.result.split('\n').map(function (line) 
@@ -79,15 +92,15 @@ function loadFile(event)
                 total += parseFloat(elements[1])
 
                 //check highest grade
-                if(elements[1] > highestGrade.actualGrade)
+                if(parseFloat(elements[1]) > highestGrade.actualGrade)
                 {
                     highestGrade.name = elements[0]
                     highestGrade.actualGrade = elements[1]
                     highestGrade.grade = elements[1]
                 }
-
+                
                 //check lowest grade
-                if(elements[1] < lowestGrade.actualGrade)
+                if(parseFloat(elements[1]) < lowestGrade.actualGrade)
                 {
                     lowestGrade.name = elements[0]
                     lowestGrade.actualGrade = elements[1]
@@ -114,7 +127,6 @@ function loadFile(event)
         {
             for(gr in allGrades)
             {
-                
                 if(lines[g] >= allGrades[gr].percentage)
                 {
                     allGrades[gr].members ++;
@@ -122,9 +134,6 @@ function loadFile(event)
                 }
             }
         }
-
-        //for(sm in allGrades)
-            //console.log(sm.members)
 
         refreshSite()
     }

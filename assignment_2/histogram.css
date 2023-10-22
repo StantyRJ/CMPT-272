@@ -12,7 +12,7 @@ body
 
 section
 {
-    width: 33%;
+    width: 28%;
     height: max-content;
     margin-top: 32px;
     margin-left: auto;
@@ -39,6 +39,11 @@ section input
     transition: border 1s;
 }
 
+#error
+{
+    color: #A6192E;
+}
+
 input:focus
 {
     border-color: #555;
@@ -53,20 +58,19 @@ input:focus
 .header
 {
     width: 100%;
-    margin: auto;
-    height: min-content;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: transparent;
 }
 
 .content
 {
     width: 90%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
+    margin: auto;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex: 1 1 0px;
     flex-wrap: wrap;
     background-color: white;
 }
