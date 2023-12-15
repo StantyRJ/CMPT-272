@@ -1,0 +1,39 @@
+<head ngOnInit="loadData()">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+  </head>
+<div id="mapid" style="width: 100%; height: 400px;"></div>
+
+<div class="row mt-3">
+  <div class="col">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th>Culprit </th>
+              <th >Name</th>
+              <th width="150">Location</th>
+              <th width="100">Villain's Name</th>
+              <th>More Information</th>
+              <th>Delete Report</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let report of reports; index as i">
+              <td>
+                <img [src]="report.data.pictureLink" alt="flag" width="30" height="20">
+              </td>
+              <td>{{ report.data.reporterName }}</td>
+              <td>{{ report.data.locationName }}</td>
+              <td>{{ report.data.troubleMakerName }}</td>
+              <td (click)="moreInfo(i)" class="more-info">More Info</td>
+              <td (click)="deleteReport(i)" class="delete">Delete</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+<a routerLink="/report" (click)="goToReport()" class="button-link">Report Nuisance</a>

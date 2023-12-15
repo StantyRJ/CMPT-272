@@ -1,0 +1,66 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #007bff; /* Heading color */
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:disabled {
+    background-color: #b0c4de; /* Disabled button background color */
+    color: #555; /* Disabled button text color */
+    cursor: not-allowed;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Hovered button background color */
+  }
+  
+  button.router-link {
+    margin-top: 10px;
+    width: 50%;
+    margin: auto;
+    background-color: rgb(124, 29, 29); /* Back button background color */
+    color: #fff; /* Back button text color */
+  }
+  
+  button.router-link:hover {
+    background-color: rgb(71, 18, 18); /* Hovered back button background color */
+  }
+  

@@ -1,0 +1,42 @@
+table {
+    table-layout: fixed;
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td
+{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+button
+{
+    margin-top: 16px;
+}
+
+td button
+{
+    margin-top: 0px;
+}
+
+form
+{
+    margin: 12px;
+}
+
+input
+{
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+select
+{
+    margin-top: 12px;
+    margin-left: 12px;
+}

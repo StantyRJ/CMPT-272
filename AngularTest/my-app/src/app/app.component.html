@@ -1,0 +1,16 @@
+<router-outlet></router-outlet>
+
+<table>
+  <thead>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Type</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons; let i = index" [style.box-shadow]="(pokemon.isStylish ? '10px 10px 8px #888888': '')">
+      <td >{{pokemon.id}}</td>
+      <td>{{pokemon.name}}</td>
+      <td>{{pokemon.type}}</td>
+    </tr>
+  </tbody>
+</table>

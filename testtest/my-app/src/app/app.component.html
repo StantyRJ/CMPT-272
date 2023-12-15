@@ -1,0 +1,23 @@
+<h1>Search: </h1>
+<input type="text" [(ngModel)]="searchedValue" (input)="onSearchChange">
+<div *ngFor="let item of todos; let i = index">
+  <div class="item">
+    <h4>{{item.title}}</h4><br>
+    <p>difficulty: {{"*".repeat(item.difficulty)}}</p><br>
+    <p>Complete: <input type="checkbox"> </p>
+    <br><button (click)="delete(i)">delete</button>
+  </div>
+</div>
+<button (click)="addNew()">Add</button>
+<div *ngIf="addingNew" (submit)="onSubmit()">
+  <form [formGroup]="applyForm">
+    <label for="title">Todo: </label>
+    <input type="text" id="title" formControlName="title">
+
+    <label for="difficulty">Difficulty: </label>
+    <input type="number" id="difficulty" formControlName="difficulty">
+
+    <button type="submit">Add task</button>
+  </form>
+</div>
+

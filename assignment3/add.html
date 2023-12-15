@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Farmer Hoggett's Pig Manager</title>
+</head>
+<body>
+    <h1>Add new pig:</h1>
+    <select id="category" onchange="categoryPig()">
+        <option value="greyPig">Grey Pig</option>
+        <option value="chesnutPig">Chesnut Pig</option>
+        <option value="whitePig">White Pig</option>
+        <option value="blackPig">Black Pig</option>
+    </select>
+
+    <form id="newPig"></form>
+    <button id="addPig">Add</button>
+    <a href="index.html"><button>Back</button></a>
+</body>
+</html>

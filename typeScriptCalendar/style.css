@@ -1,0 +1,21 @@
+tr
+{
+
+    width: 100%;
+}
+
+td
+{
+    transition: background-color .5s;
+    background-color: rgb(230, 243, 255);
+    border-radius: 4px;
+    width: 150px;
+    height: 150px;
+    vertical-align: text-top;
+}
+
+td:hover
+{
+    transition: background-color .5s;
+    background-color: rgb(118, 127, 136);
+}

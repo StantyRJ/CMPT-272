@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Nuisance Report</h1>
+    <form #info="ngForm" (ngSubmit)="submit(info.value,info)">
+        <label>Reporting Person's Information</label><br>
+        <label for="reporterName">Name: </label>
+        <input type="text" name="reporterName" class="form-control" ngModel><br>
+        <label for="reporterPhoneNumber">Number: </label>
+        <input type="tel" name="reporterPhoneNumber" class="form-control" ngModel>
+        <pre></pre>
+        <label>Troublemaker Information</label><br>
+        <label for="troubleMakerName">Villain's Name: </label>
+        <input type="text" name="troubleMakerName" class="form-control" ngModel>
+        <pre></pre>
+        <label>Location Spotted</label><br>
+        <label for="locations">Select or Add Location:</label>
+        <select name="locations" class="form-control" [(ngModel)]="selectedLocation">
+          <option *ngFor="let loc of locations" [ngValue]="loc">{{ loc.locationName }}</option>
+          <option value="newLocation">Add New Location</option>
+        </select>
+    
+        <!-- Add fields for new location when "Add New Location" is selected -->
+        <div *ngIf="selectedLocation === 'newLocation'">
+          <label for="newLocationName">New Location Name: </label>
+          <input type="text" name="locationName" class="form-control" ngModel required><br>
+          <label for="newLocationName">Latitude: </label>
+          <input type="text" name="latitude" class="form-control" ngModel required><br>
+          <label for="newLocationName">Longitude: </label>
+          <input type="text" name="longitude" class="form-control" ngModel required><br>
+        </div>
+        <pre></pre>
+        <label for="pictureLink">Picture Link</label>
+        <input type="url" name="pictureLink" class="form-control" ngModel><br>
+        <pre></pre>
+        <label>Extra Info</label><br>
+        <textarea name="extraInfo" cols="50" rows="10" class="form-control" ngModel></textarea>
+        <pre></pre>
+        <button class="btn btn-primary" type="submit" [disabled]="info.invalid" class="form-control">Submit Nuisance Report</button>
+    </form>
+</div>
+<button routerLink="/" class="router-link">Back</button>

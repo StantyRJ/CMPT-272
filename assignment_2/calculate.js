@@ -5,6 +5,7 @@ var meanGrade = "69.07"
 var medianGrade = "70.54"
 var total = 0;
 var participants = -1;
+var gradesForRefresh;
 
 var grades = {
     Max: {percentage: 100.00, name: "Max", members: 1},
@@ -56,24 +57,40 @@ function refreshSite()
         $("#error").empty()
         for(i in allGrades)
         {
-            console.log(allGrades[i].percentage +" "+ parseFloat(inp.value))
             if(allGrades[i].percentage == parseFloat(inp.value))
             {
                 inp.value = allGrades[parseInt(inp.id)].percentage
                 $("#error").text("Invalid grade input grades will be crossing over!")
             }
+            
         }
 
         inp.value = parseFloat(inp.value).toFixed(2)
         allGrades[parseInt(inp.id)].percentage = parseFloat(inp.value)
-        if($("#myFile").get(0).files.length > 0)
-            loadFile($("#myFile").get(0).files)
+        if($("#myFile").prop('files').length > 0)
+            updatePercentage()
     });
 }
 
-function updatePercentage(change)
+function updatePercentage()
 {
-    console.log("here")
+    for(i in allGrades)
+    allGrades[i].members = 0;
+
+    //set new members
+    for(g in gradesForRefresh)
+    {
+        for(gr in allGrades)
+        {
+            if(gradesForRefresh[g] >= allGrades[gr].percentage)
+            {
+                allGrades[gr].members ++;
+                break;
+            }
+        }
+    }
+
+    refreshSite()
 }
 
 function loadFile(event)
@@ -116,26 +133,13 @@ function loadFile(event)
             return a - b;
         });
 
+        //store the grades for use later
+        gradesForRefresh = lines
+
         meanGrade = total/participants
         medianGrade = lines[parseInt((participants-1)/2)]
 
-        for(i in allGrades)
-            allGrades[i].members = 0;
-
-        //set new members
-        for(g in lines)
-        {
-            for(gr in allGrades)
-            {
-                if(lines[g] >= allGrades[gr].percentage)
-                {
-                    allGrades[gr].members ++;
-                    break;
-                }
-            }
-        }
-
-        refreshSite()
+        updatePercentage()
     }
     reader.readAsText(event.target.files[0])
 }
